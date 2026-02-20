@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatPro | Stable Build</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar">
+            <header class="sidebar-header">
+                <div id="my-avatar" class="avatar-circle my-bg">M</div>
+                <div class="header-btns">
+                    <button id="add-contact-btn" class="icon-btn">➕</button>
+                    <button id="settings-btn" class="icon-btn">⚙️</button>
+                </div>
+            </header>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search contacts...">
+            </div>
+            <div id="contact-list" class="contact-list"></div>
+        </aside>
+
+        <main class="chat-area">
+            <div id="welcome-screen" class="centered-overlay">
+                <div class="welcome-logo">💬</div>
+                <h2>ChatPro Web</h2>
+                <p>Select a contact to start chatting</p>
+            </div>
+
+            <div id="chat-screen" class="chat-flex-container hidden">
+                <header class="chat-header" id="header-profile-trigger">
+                    <div id="active-avatar" class="avatar-circle"></div>
+                    <div class="user-meta">
+                        <h3 id="active-name">Username</h3>
+                        <small>Online</small>
+                    </div>
+                    <div class="chat-actions">
+                        <button id="clear-btn" class="text-link">Clear</button>
+                        <button id="block-btn" class="danger-btn">Block</button>
+                    </div>
+                </header>
+
+                <div id="message-display" class="message-display"></div>
+
+                <footer class="input-bar" id="input-section">
+                    <input type="file" id="file-input" style="display:none" accept="image/*">
+                    <button id="attach-btn" class="icon-btn">📎</button>
+                    <button id="emoji-btn" class="icon-btn">😊</button>
+                    <div id="emoji-menu" class="emoji-menu hidden">
+                        <span>😀</span><span>😂</span><span>😍</span><span>👍</span>
+                    </div>
+                    <input type="text" id="msg-input" placeholder="Type a message..." autocomplete="off">
+                    <button id="send-btn" class="send-btn">Send</button>
+                </footer>
+
+                <div id="blocked-banner" class="blocked-banner hidden">
+                    User Blocked. <span id="unblock-link">Unblock</span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="settings-modal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <button class="close-modal">✕</button>
+            <h3>Profile Settings</h3>
+            <div id="my-preview-avatar" class="avatar-large">M</div>
+            <button id="change-pic-btn" class="text-link">Change Photo</button>
+            <input type="file" id="pic-upload" style="display:none" accept="image/*">
+            <input type="text" id="my-name-input" placeholder="Your Name" class="styled-input">
+            <button id="save-profile" class="send-btn" style="width:100%; margin-top:15px;">Save & Close</button>
+        </div>
+    </div>
+
+    <div id="profile-modal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <button class="close-modal">✕</button>
+            <div id="view-avatar" class="avatar-large"></div>
+            <h2 id="view-name">Name</h2>
+            <p>Hey there! I am using ChatPro.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
